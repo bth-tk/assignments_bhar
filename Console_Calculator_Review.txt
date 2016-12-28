@@ -1,0 +1,4 @@
+Solution looks good. Have two suggestions.
+
+1.  Extend the functionality using Math class.
+2. Give meaningful name to your solution(Best practice).
