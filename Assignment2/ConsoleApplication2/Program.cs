@@ -18,10 +18,11 @@ namespace ConsoleApplication2
             student3.firstName = "JiM";
             student3.lastName = "Cooper";
 
-            student1.GetCount();
-            student2.GetCount();
-            int i;
-            i = student3.GetCount();
+            //student1.GetCount();
+            //student2.GetCount();
+            //int i;
+            int i = Student.GetCount();
+
             Console.WriteLine("Total student count is: {0}", i);
 
 
@@ -37,23 +38,24 @@ namespace ConsoleApplication2
     public class Student
     {
 
-        public static int count = 0;
+        public static int count = 1;
         public int DOB;
         public string email;
         public string firstName;
         public string lastName;
-        public static int studentId = 1000;
+        public int studentId;
 
         //Console.WriteLine("inside class");
         //Console.WriteLine();
 
         public Student()
         {
-
+            count++;         
         }
 
-        public Student(int DOB, string email, string firstName, string lastName)
+        public Student(int DOB, string email, string firstName, string lastName):this()
         {
+            this.studentId = count + 1000;
             this.DOB = DOB;
             this.email = email;
             this.firstName = firstName;
@@ -62,19 +64,20 @@ namespace ConsoleApplication2
 
         }
 
-        public int GetCount()
+        public static int GetCount()
         {
             //Console.WriteLine("get count method")	;		
-            count = count + 1;
+            //count = count + 1;
             //Console.WriteLine(count)	;
             return count;
         }
-        public int Id()
-        {
-            studentId = studentId + 1;
-            //Console.WriteLine("inside id");
-            return studentId;
-        }
+
+        //public int Id()
+        //{
+        //    studentId = studentId + 1;
+        //    //Console.WriteLine("inside id");
+        //    return studentId;
+        //}
 
 
     }
